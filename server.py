@@ -13,7 +13,7 @@ def root():
 
 @app.route("/data.json")
 def newroute():
-  BACKEND_URL = "https://" + str(os.getenv('BACKEND_URL')) + "/getdata"
+  BACKEND_URL = "http://" + str(os.getenv('BACKEND_URL')) + "/getdata"
   logging.info("Getting backend data from " + str(BACKEND_URL))
   leaderboard_data = requests.get(BACKEND_URL)
   logging.debug(leaderboard_data.json())
